@@ -2,5 +2,8 @@
 <h3><%=@artist.name + " - verified:" + @artist.verified.to_s%></h3>
 <h3>Age: <%=@artist.age%></h3>
 <h3>Instrument: <%=@artist.instrument%></h3>
+<h4><%=link_to "All songs by #{@artist.name}", artist_songs_path(@artist)%></h4>
+<h4><%=button_to "Add a song by #{@artist.name}", new_song_path, {params: {artist_id: @artist.id}, method: "get"}%></h4>
 <h4><%=link_to "Artist List", artists_path%></h4>
 <p><%=link_to "Update an Artist's Page", edit_artist_path(@artist)%></p>
+<p><%=link_to "Delete this artist", artist_path(@artist.id), method: "delete"%>

@@ -19,7 +19,7 @@ class ArtistsController < ApplicationController
     end
 
     def edit
-        Artist.find(params[:id])
+        @artist = Artist.find(params[:id])
     end
 
     def update
@@ -29,8 +29,16 @@ class ArtistsController < ApplicationController
     end
 
     def destroy
-
+        delete_artist = Artist.find(params[:id])
+        delete_artist.delete
+        redirect_to artists_path
     end
+
+    def artist_songs
+        @artist = Artist.find(params[:id])
+        @songs = @artist.songs
+    end
+
 
     private
 

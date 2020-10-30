@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'songs/index'
+  get 'songs/show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/', to: 'application#home'
   get '/about', to: 'application#about'
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
   # post '/artists', to: 'artists#create'
   # get '/artists/:id', to: 'artists#show', as: 'artist'
 
-resources :artists
+resources :artists, :songs 
+
+  get '/artists/:id/songs', to: "artists#artist_songs", as: "artist_songs"
+
 end
 

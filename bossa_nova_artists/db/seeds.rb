@@ -6,11 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Artist.destroy_all
+
 20.times do
 name = Faker::BossaNova.artist
 instrument = Faker::Music.instrument 
 age = rand(20..70)
 verified = [true,false].sample
-Artist.create(name: name, instrument: instrument, age: age, verified: verified)
-end
+artist = Artist.create(name: name, instrument: instrument, age: age, verified: verified)
 
+5.times do
+    artist.write_songs(Faker::BossaNova.song)
+    end
+
+end

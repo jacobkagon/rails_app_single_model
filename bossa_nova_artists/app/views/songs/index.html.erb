@@ -1,0 +1,7 @@
+<h1>Bossa Nova Songs</h1>
+  <ul>
+    <%@songs.each do |song|%>
+    <li><%=link_to song.name, song_path(song.id)%></li>
+    <%end%>
+  </ul>
+  <p><%=link_to "Add a Song", new_song_path%></p>
