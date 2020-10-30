@@ -1,0 +1,6 @@
+<h1>Artist Page</h1>
+<h3><%=@artist.name + " - verified:" + @artist.verified.to_s%></h3>
+<h3>Age: <%=@artist.age%></h3>
+<h3>Instrument: <%=@artist.instrument%></h3>
+<h4><%=link_to "Artist List", artists_path%></h4>
+<p><%=link_to "Update an Artist's Page", edit_artist_path(@artist)%></p>

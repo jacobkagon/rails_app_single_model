@@ -1,0 +1,14 @@
+<h1>Add an Artist</h1>
+<div>
+<%=form_for @artist do |f| %>
+<%=f.label :name%>
+<%=f.text_field :name%>
+<%=f.label :age%>
+<%=f.number_field :age%>
+<%=f.label :instrument%>
+<%=f.text_field :instrument%>
+<%=f.label :verified%>
+<%=f.select :verified,[:true, :false]%>
+<%=f.submit%>
+<%end%>
+</div>

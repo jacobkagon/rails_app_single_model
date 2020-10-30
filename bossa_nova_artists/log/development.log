@@ -1,0 +1,932 @@
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArtists (20201030154948)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "verified" boolean, "instrument" varchar, "age" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201030154948"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-30 15:50:20.901573"], ["updated_at", "2020-10-30 15:50:20.901573"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (1.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Maria Bethania"], ["verified", 0], ["instrument", "Cello"], ["age", 23], ["created_at", "2020-10-30 15:55:03.968880"], ["updated_at", "2020-10-30 15:55:03.968880"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Roberto Menescal"], ["verified", 1], ["instrument", "Acoustic Guitar"], ["age", 40], ["created_at", "2020-10-30 15:55:03.973717"], ["updated_at", "2020-10-30 15:55:03.973717"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Elis Regina"], ["verified", 0], ["instrument", "Organ"], ["age", 45], ["created_at", "2020-10-30 15:55:03.976903"], ["updated_at", "2020-10-30 15:55:03.976903"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Stan Getz"], ["verified", 0], ["instrument", "Flute"], ["age", 70], ["created_at", "2020-10-30 15:55:03.979982"], ["updated_at", "2020-10-30 15:55:03.979982"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chico Moraes"], ["verified", 1], ["instrument", "Flute"], ["age", 65], ["created_at", "2020-10-30 15:55:03.983161"], ["updated_at", "2020-10-30 15:55:03.983161"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Luiz Eca"], ["verified", 0], ["instrument", "Bass Guitar"], ["age", 52], ["created_at", "2020-10-30 15:55:03.986400"], ["updated_at", "2020-10-30 15:55:03.986400"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Luiz Eca"], ["verified", 1], ["instrument", "Clarinet"], ["age", 50], ["created_at", "2020-10-30 15:55:03.989594"], ["updated_at", "2020-10-30 15:55:03.989594"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alaide Costa"], ["verified", 1], ["instrument", "Bass Guitar"], ["age", 43], ["created_at", "2020-10-30 15:55:03.992396"], ["updated_at", "2020-10-30 15:55:03.992396"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Baden Powell"], ["verified", 0], ["instrument", "Violin"], ["age", 23], ["created_at", "2020-10-30 15:55:03.995471"], ["updated_at", "2020-10-30 15:55:03.995471"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Antonio Carlos Jobim"], ["verified", 0], ["instrument", "Harmonica"], ["age", 54], ["created_at", "2020-10-30 15:55:03.998503"], ["updated_at", "2020-10-30 15:55:03.998503"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Stan Getz"], ["verified", 1], ["instrument", "Ukelele"], ["age", 59], ["created_at", "2020-10-30 15:55:04.001324"], ["updated_at", "2020-10-30 15:55:04.001324"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Astrud Gilberto"], ["verified", 0], ["instrument", "Oboe"], ["age", 22], ["created_at", "2020-10-30 15:55:04.004785"], ["updated_at", "2020-10-30 15:55:04.004785"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alaide Costa"], ["verified", 1], ["instrument", "Cello"], ["age", 48], ["created_at", "2020-10-30 15:55:04.007660"], ["updated_at", "2020-10-30 15:55:04.007660"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Zimbo Trio"], ["verified", 0], ["instrument", "Trumpet"], ["age", 43], ["created_at", "2020-10-30 15:55:04.010494"], ["updated_at", "2020-10-30 15:55:04.010494"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Elza Soares"], ["verified", 1], ["instrument", "Acoustic Guitar"], ["age", 62], ["created_at", "2020-10-30 15:55:04.013113"], ["updated_at", "2020-10-30 15:55:04.013113"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Leny Andrade"], ["verified", 1], ["instrument", "Oboe"], ["age", 31], ["created_at", "2020-10-30 15:55:04.016986"], ["updated_at", "2020-10-30 15:55:04.016986"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lucio Alves"], ["verified", 1], ["instrument", "Clarinet"], ["age", 29], ["created_at", "2020-10-30 15:55:04.020596"], ["updated_at", "2020-10-30 15:55:04.020596"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Roberto Menescal"], ["verified", 1], ["instrument", "Violin"], ["age", 50], ["created_at", "2020-10-30 15:55:04.023543"], ["updated_at", "2020-10-30 15:55:04.023543"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Antonio Carlos Jobim"], ["verified", 0], ["instrument", "Acoustic Guitar"], ["age", 49], ["created_at", "2020-10-30 15:55:04.026563"], ["updated_at", "2020-10-30 15:55:04.026563"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dori Caymmi"], ["verified", 0], ["instrument", "Organ"], ["age", 42], ["created_at", "2020-10-30 15:55:04.029436"], ["updated_at", "2020-10-30 15:55:04.029436"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-10-30 12:02:23 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jacobkagon/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jacobkagon/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.5ms | Allocations: 480)
+Completed 200 OK in 21ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 2785)
+
+
+Started GET "/candies" for ::1 at 2020-10-30 12:02:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/candies"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2020-10-30 12:02:31 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 74)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jacobkagon/rails_app_single_model/bossa_nova_artists/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.2
+Time: 1470ms
+Built at: 10/30/2020 12:02:34 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 3107ms (Views: 3103.8ms | ActiveRecord: 0.0ms | Allocations: 18818)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 12:04:41 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 6107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.8ms | Allocations: 10912)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 12:05:13 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1034)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 5838)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 12:08:04 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 157.2ms | Allocations: 78994)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.2ms | Allocations: 80192)
+
+
+  
+ActionView::Template::Error (undefined method `artist_path' for #<#<Class:0x00007ffdcbcf3188>:0x00007ffdcbcf0cf8>
+Did you mean?  artists_path):
+    1: <h3>Bossa Nova Artists</h3>
+    2:   <ul>
+    3:     <%@artists.each do |artist|%>
+    4:     <li><%=link_to artist.name, artist_path(artist.id)%></li>
+    5:     <%end%>
+    6:   </ul>
+  
+app/views/artists/index.html.erb:4
+app/views/artists/index.html.erb:3
+Started GET "/artists" for ::1 at 2020-10-30 12:09:14 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 6208)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.6ms | Allocations: 10705)
+
+
+Started GET "/artists/2" for ::1 at 2020-10-30 12:13:13 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 275.4ms | Allocations: 149937)
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 0.6ms | Allocations: 157252)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artist' for #<#<Class:0x00007ffdcc4b2388>:0x00007ffdcc4bb000>
+Did you mean?  @artist):
+    1: <h1>Artist Page</h1>
+    2: <h3><%=artist.name + " - verified:" + artist.verified%></h3>
+  
+app/views/artists/show.html.erb:2
+Started GET "/artists/2" for ::1 at 2020-10-30 12:13:34 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 974)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 2699)
+
+
+  
+ActionView::Template::Error (no implicit conversion of true into String):
+    1: <h1>Artist Page</h1>
+    2: <h3><%=@artist.name + " - verified:" + @artist.verified%></h3>
+  
+app/views/artists/show.html.erb:2:in `+'
+app/views/artists/show.html.erb:2
+Started GET "/artists/2" for ::1 at 2020-10-30 12:13:57 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 5433)
+
+
+Started GET "/artists/2" for ::1 at 2020-10-30 12:15:58 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 5469)
+
+
+Started GET "/artists/2" for ::1 at 2020-10-30 12:17:09 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 5517)
+
+
+Started GET "/artists/2" for ::1 at 2020-10-30 12:17:34 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 199)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 5519)
+
+
+Started GET "/artists/2" for ::1 at 2020-10-30 12:17:50 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 199)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 5519)
+
+
+Started GET "/" for ::1 at 2020-10-30 12:21:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 88)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4518)
+
+
+Started GET "/about" for ::1 at 2020-10-30 12:22:03 -0400
+Processing by ApplicationController#about as HTML
+  Rendering application/about.html.erb within layouts/application
+  Rendered application/about.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 4063)
+
+
+Started GET "/artists/new" for ::1 at 2020-10-30 12:40:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 174.2ms | Allocations: 201906)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 0.6ms | Allocations: 208241)
+
+
+  
+ActionView::Template::Error (undefined method `[:true, :false]' for #<Artist:0x00007ffdcbc44430>):
+     8: <%=f.label :instrument%>
+     9: <%=f.text_field :instrument%>
+    10: <%=f.label :verified%>
+    11: <%=f.select [:true, :false]%>
+    12: <%=f.submit%>
+    13: <%end%>
+    14: </div>
+  
+app/views/artists/new.html.erb:11
+app/views/artists/new.html.erb:3
+Started GET "/artists/new" for ::1 at 2020-10-30 12:43:04 -0400
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1940)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3147)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+     8: <%=f.label :instrument%>
+     9: <%=f.text_field :instrument%>
+    10: <%=f.label :verified%>
+    11: <%=f.select (:verified[:true, :false])%>
+    12: <%=f.submit%>
+    13: <%end%>
+    14: </div>
+  
+app/views/artists/new.html.erb:11:in `[]'
+app/views/artists/new.html.erb:11
+app/views/artists/new.html.erb:3
+Started GET "/artists/new" for ::1 at 2020-10-30 12:43:51 -0400
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1151)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2359)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Add an Artist</h1>
+<div>
+<%form_for @artist do |f| %>
+<%=f.label :name%>
+<%=f.text_field :name%>
+<%=f.label :age%>
+<%=f.number_field :age%>
+<%=f.label :instrument%>
+<%=f.text_field :instrument%>
+<%=f.label :verified%>
+<%=f.select (:verified,[:true, :false])%>
+<%=f.submit%>
+<%end%>
+</div>
+):
+1:    <h1>Add an Artist</h1>
+2:    <div>
+3:    <%form_for @artist do |f| %>
+4:    <%=f.label :name%>
+5:    <%=f.text_field :name%>
+6:    <%=f.label :age%>
+7:    <%=f.number_field :age%>
+8:    <%=f.label :instrument%>
+9:    <%=f.text_field :instrument%>
+10:    <%=f.label :verified%>
+11:    <%=f.select (:verified,[:true, :false])%>
+12:    <%=f.submit%>
+13:    <%end%>
+14:    </div>
+  
+app/views/artists/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+app/views/artists/new.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+app/views/artists/new.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+app/views/artists/new.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+app/views/artists/new.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+app/views/artists/new.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:16: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+app/views/artists/new.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:16: syntax error, unexpected end, expecting ')'
+Started GET "/artists/new" for ::1 at 2020-10-30 12:44:33 -0400
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1444)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 6247)
+
+
+Started GET "/artists/new" for ::1 at 2020-10-30 12:44:46 -0400
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 6192)
+
+
+Started POST "/artists" for ::1 at 2020-10-30 12:46:36 -0400
+Processing by ArtistsController#create as HTML
+  Parameters: {"authenticity_token"=>"m0DlYDtXEpMUGUQkZ5OEMVnX7MpSlidijtMOIiFz5qB6wRgPByOJsB202OmsEbLXAjpP7KE3Lo5AxjOzX0sUxw==", "artist"=>{"name"=>"João Gilberto", "age"=>"88", "instrument"=>" acoustic guitar", "verified"=>"true"}, "commit"=>"Create Artist"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "João Gilberto"], ["verified", 1], ["instrument", " acoustic guitar"], ["age", 88], ["created_at", "2020-10-30 16:46:36.242192"], ["updated_at", "2020-10-30 16:46:36.242192"]]
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.6ms | Allocations: 3251)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"artists", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/artists_controller.rb:17:in `create'
+Started POST "/artists" for ::1 at 2020-10-30 12:47:05 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"authenticity_token"=>"m0DlYDtXEpMUGUQkZ5OEMVnX7MpSlidijtMOIiFz5qB6wRgPByOJsB202OmsEbLXAjpP7KE3Lo5AxjOzX0sUxw==", "artist"=>{"name"=>"João Gilberto", "age"=>"88", "instrument"=>" acoustic guitar", "verified"=>"true"}, "commit"=>"Create Artist"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "João Gilberto"], ["verified", 1], ["instrument", " acoustic guitar"], ["age", 88], ["created_at", "2020-10-30 16:47:05.511403"], ["updated_at", "2020-10-30 16:47:05.511403"]]
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.5ms | Allocations: 8505)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/artists_controller.rb:17:in `create'
+Started POST "/artists" for ::1 at 2020-10-30 12:47:39 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#create as HTML
+  Parameters: {"authenticity_token"=>"m0DlYDtXEpMUGUQkZ5OEMVnX7MpSlidijtMOIiFz5qB6wRgPByOJsB202OmsEbLXAjpP7KE3Lo5AxjOzX0sUxw==", "artist"=>{"name"=>"João Gilberto", "age"=>"88", "instrument"=>" acoustic guitar", "verified"=>"true"}, "commit"=>"Create Artist"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "João Gilberto"], ["verified", 1], ["instrument", " acoustic guitar"], ["age", 88], ["created_at", "2020-10-30 16:47:39.551492"], ["updated_at", "2020-10-30 16:47:39.551492"]]
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:16:in `create'
+Redirected to http://localhost:3000/artists/23
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms | Allocations: 7851)
+
+
+Started GET "/artists/23" for ::1 at 2020-10-30 12:47:39 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:8:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 201)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 5033)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.4ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 8]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 13]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 17]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.4ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 19]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 21]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 22]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Destroy (0.2ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = ?[0m  [["id", 23]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Vinicius de Moraes"], ["verified", 1], ["instrument", "Harp"], ["age", 43], ["created_at", "2020-10-30 16:49:01.724008"], ["updated_at", "2020-10-30 16:49:01.724008"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Edu Lobo"], ["verified", 0], ["instrument", "Harp"], ["age", 33], ["created_at", "2020-10-30 16:49:01.728898"], ["updated_at", "2020-10-30 16:49:01.728898"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Caetano Veloso"], ["verified", 1], ["instrument", "Flute"], ["age", 60], ["created_at", "2020-10-30 16:49:01.732945"], ["updated_at", "2020-10-30 16:49:01.732945"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Vinicius de Moraes"], ["verified", 1], ["instrument", "Flute"], ["age", 33], ["created_at", "2020-10-30 16:49:01.736945"], ["updated_at", "2020-10-30 16:49:01.736945"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wilson Simonal"], ["verified", 1], ["instrument", "Piano"], ["age", 61], ["created_at", "2020-10-30 16:49:01.740805"], ["updated_at", "2020-10-30 16:49:01.740805"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Danilo Caymmi"], ["verified", 0], ["instrument", "Organ"], ["age", 31], ["created_at", "2020-10-30 16:49:01.743895"], ["updated_at", "2020-10-30 16:49:01.743895"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wanda Sa"], ["verified", 0], ["instrument", "Violin"], ["age", 22], ["created_at", "2020-10-30 16:49:01.747609"], ["updated_at", "2020-10-30 16:49:01.747609"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Billy Blanco"], ["verified", 0], ["instrument", "Saxophone"], ["age", 22], ["created_at", "2020-10-30 16:49:01.750869"], ["updated_at", "2020-10-30 16:49:01.750869"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Laurindo de Almeida"], ["verified", 1], ["instrument", "Drums"], ["age", 22], ["created_at", "2020-10-30 16:49:01.754188"], ["updated_at", "2020-10-30 16:49:01.754188"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Joyce Moreno"], ["verified", 1], ["instrument", "Piano"], ["age", 22], ["created_at", "2020-10-30 16:49:01.757218"], ["updated_at", "2020-10-30 16:49:01.757218"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wanda Sa"], ["verified", 0], ["instrument", "Drums"], ["age", 31], ["created_at", "2020-10-30 16:49:01.760036"], ["updated_at", "2020-10-30 16:49:01.760036"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Novos Baianos"], ["verified", 0], ["instrument", "Clarinet"], ["age", 53], ["created_at", "2020-10-30 16:49:01.763573"], ["updated_at", "2020-10-30 16:49:01.763573"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Alaide Costa"], ["verified", 0], ["instrument", "Oboe"], ["age", 62], ["created_at", "2020-10-30 16:49:01.777945"], ["updated_at", "2020-10-30 16:49:01.777945"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gal Costa"], ["verified", 0], ["instrument", "Electric Guitar"], ["age", 62], ["created_at", "2020-10-30 16:49:01.783906"], ["updated_at", "2020-10-30 16:49:01.783906"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Novos Baianos"], ["verified", 1], ["instrument", "Harmonica"], ["age", 65], ["created_at", "2020-10-30 16:49:01.787628"], ["updated_at", "2020-10-30 16:49:01.787628"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nara Leao"], ["verified", 1], ["instrument", "Harmonica"], ["age", 28], ["created_at", "2020-10-30 16:49:01.790900"], ["updated_at", "2020-10-30 16:49:01.790900"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Elizeth Cardoso"], ["verified", 0], ["instrument", "Acoustic Guitar"], ["age", 67], ["created_at", "2020-10-30 16:49:01.794295"], ["updated_at", "2020-10-30 16:49:01.794295"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Joyce Moreno"], ["verified", 0], ["instrument", "Bass Guitar"], ["age", 63], ["created_at", "2020-10-30 16:49:01.797726"], ["updated_at", "2020-10-30 16:49:01.797726"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Elizeth Cardoso"], ["verified", 0], ["instrument", "Xylophone"], ["age", 48], ["created_at", "2020-10-30 16:49:01.800978"], ["updated_at", "2020-10-30 16:49:01.800978"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArtist Create (0.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "verified", "instrument", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wilson Simonal"], ["verified", 1], ["instrument", "Electric Guitar"], ["age", 48], ["created_at", "2020-10-30 16:49:01.803827"], ["updated_at", "2020-10-30 16:49:01.803827"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/artists" for ::1 at 2020-10-30 12:50:45 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 6725)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 44.1ms | ActiveRecord: 0.9ms | Allocations: 14822)
+
+
+Started GET "/artists/rails/routes" for ::1 at 2020-10-30 12:51:45 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/artists/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2020-10-30 12:52:11 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms | Allocations: 58365)
+
+
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" LIMIT ?[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `link_to' for #<ArtistsController:0x00007f8f55563380>):
+  
+app/controllers/artists_controller.rb:5:in `index'
+Started GET "/artists" for ::1 at 2020-10-30 12:52:45 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 6381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.7ms | Allocations: 11508)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 12:53:09 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1563)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.1ms | Allocations: 6363)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 12:53:31 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1566)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 6368)
+
+
+Started GET "/artists/new" for ::1 at 2020-10-30 12:53:36 -0400
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 124.0ms | Allocations: 201490)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 129.7ms | ActiveRecord: 0.0ms | Allocations: 205420)
+
+
+Started GET "/artists/new" for ::1 at 2020-10-30 12:56:53 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1463)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 19.0ms | ActiveRecord: 0.8ms | Allocations: 11344)
+
+
+Started GET "/artists/new" for ::1 at 2020-10-30 12:57:12 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1198)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 10324)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 12:57:14 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 311.6ms | Allocations: 154302)
+Completed 500 Internal Server Error in 313ms (ActiveRecord: 0.2ms | Allocations: 154928)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artists_new_path' for #<#<Class:0x00007f8f5e2788b0>:0x00007f8f5e90f390>
+Did you mean?  artists_path):
+    4:     <li><%=link_to artist.name, artist_path(artist.id)%></li>
+    5:     <%end%>
+    6:   </ul>
+    7:   <p><%=link_to "Add an Artist", artists_new_path%></p>
+  
+app/views/artists/index.html.erb:7
+Started GET "/rails/routes" for ::1 at 2020-10-30 12:57:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2020-10-30 12:59:02 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1564)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 6370)
+
+
+Started GET "/artists/new" for ::1 at 2020-10-30 12:59:07 -0400
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 5415)
+
+
+Started GET "/artists/34" for ::1 at 2020-10-30 12:59:11 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:9:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 206)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 7062)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 12:59:13 -0400
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1392)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 5259)
+
+
+Started GET "/artists/35" for ::1 at 2020-10-30 12:59:14 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:9:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 4448)
+
+
+Started GET "/artists" for ::1 at 2020-10-30 13:00:49 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 6240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.5ms | Allocations: 10552)
+
+
+Started GET "/artists/rails/routes" for ::1 at 2020-10-30 13:00:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/artists/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2020-10-30 13:03:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 7297)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 8832)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"artists"}, missing required keys: [:id]):
+    5:     <%end%>
+    6:   </ul>
+    7:   <p><%=link_to "Add an Artist", new_artist_path%></p>
+    8:   <p><%=link_to "Update an Artist's Page", edit_artist_path%></p>
+  
+app/views/artists/index.html.erb:8
+Started GET "/artists" for ::1 at 2020-10-30 13:05:37 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:3
+  Rendered artists/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 6384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.5ms | Allocations: 11469)
+
+
+Started GET "/artists/31" for ::1 at 2020-10-30 13:05:39 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:9:in `show'
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 247)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 4912)
+
+
+Started GET "/artists/31/edit" for ::1 at 2020-10-30 13:05:40 -0400
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:22:in `edit'
+  Rendering artists/edit.html.erb within layouts/application
+  Rendered artists/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1133)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2261)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Add an Artist</h1>
+    2: <div>
+    3: <%=form_for @artist do |f| %>
+    4: <%=f.label :name%>
+    5: <%=f.text_field :name%>
+    6: <%=f.label :age%>
+  
+app/views/artists/edit.html.erb:3
